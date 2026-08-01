@@ -112,7 +112,9 @@ app.use((err, req, res, next) => {
 // -------------------
 // Start Server
 // -------------------
-const PORT = process.env.PORT || 8080;
-app.listen(PORT, () => {
+const PORT = process.env.PORT || 10000; // Change default local 8080 to Render's default 10000
+
+// Bind the server to 0.0.0.0 so Render can route public traffic to it
+app.listen(PORT, "0.0.0.0", () => {
   console.log(`Server is listening on port ${PORT}`);
 });
