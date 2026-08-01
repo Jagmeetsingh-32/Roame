@@ -14,10 +14,11 @@ async function sendOTP(emailId) {
     console.log("OTP:", res.OTP);
     console.log("Success:", res.success);
     return res.OTP;
-  } catch (error) {
-    console.log("Error sending OTP:", error);
-    return null;
-  }
+  } 
+  // catch (error) {
+  //   console.log("Error sending OTP:", error);
+  //   return null;
+  // }
 }
 
 // Example usage
