@@ -15,11 +15,12 @@ async function sendOTP(emailId) {
     console.log("Success:", res.success);
     return res.OTP;
   } 
-  // catch (error) {
-  //   console.log("Error sending OTP:", error);
-  //   return null;
-  // }
+  catch (error) {
+    // ✅ UNCOMMENT THIS: Always catch errors so your server doesn't crash!
+    console.log("Error sending OTP:", error.message);
+    return null;
+  }
 }
 
-// Example usage
-sendOTP("user@example.com");
+// ❌ COMMENT THIS OUT OR DELETE IT:
+// sendOTP("user@example.com"); 
