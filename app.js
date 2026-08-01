@@ -46,7 +46,8 @@ app.use(express.static(path.join(__dirname, "public")));
 // Session Config
 // -------------------
 const store = MongoStore.create({
-  mongoUrl: dbUrl,
+  // If ATLASDB_URL is missing, it falls back to local so it doesn't crash the server build
+  mongoUrl: dbUrl || "mongodb://127.0.0.1:27017/roame_fallback", 
   crypto: { secret: process.env.SESSION_SECRET || "mysupersecretcode" },
   touchAfter: 24 * 3600
 });
